@@ -1,3 +1,4 @@
 # Student Project 
-*Mongo db
-*ejs 
+*MONGO DB
+*EXPRESS
+**EXPRESS-EJS-LAYOUTS
