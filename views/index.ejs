@@ -1,0 +1,109 @@
+
+    
+
+<div class="container">
+   <div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-12">
+        <div class="card shadow">
+            <div class="card-header bg-secondary d-flex  justify-content-between">
+                <a href="" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="w-50 h-100 btn btn-warning align-items-center">Add New Student</a> <span class="text-white h4 pe-5">All Student</span>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Id</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Photo</th>
+                            <th class="text-center">age</th>
+                            <th class="text-center">Skill</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Gender</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% stu_data.forEach(element => { %>
+                            <tr class="">
+                                <td class="text-center"><%= element.id %> </td>
+                                <td class="text-center"><%= element.name %> </td>
+                                <td class="text-center">
+                                    <% if (element.photo == '6.jpg') { %>
+                                        <img style="width: 50px;height:50px" src="/images/<%= element.photo %> " alt="">
+                                        <% } else { %>
+                                            <img style="width: 50px;height:50px" src="/images/<%= element.photo %> " alt="">
+                                    <% } %>
+                                </td>
+                                <td class="text-center"><%= element.age %> </td>
+                                <td class="text-center"><%= element.skill %> </td>
+                                <td class="text-center"><%= element.email %> </td>
+                                <td class="text-center"><%= element.gender %> </td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-primary" href="/view/<%= element.id %> "><i class="fas fa-eye"></i></a>
+                                    <a class="btn btn-sm btn-warning"  href="/update/<%= element.id %> "><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger" href="/delete/<%= element.id %> "><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <% }) %> 
+                        
+                       
+                    </tbody>
+                </table>
+            </div>
+           </div>
+    </div>
+   </div>
+</div>
+
+
+
+<!---------------------------------------------------------------- modal  -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-header bg-primary text-center text-white">
+                <h1>Create New Student</h1>
+            </div>
+            <div class="card-body">
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="m-1">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" name="name" id="">
+                    </div>
+                    <div class="m-1">
+                        <label for="">Age</label>
+                        <input type="text" class="form-control" name="age" id="">
+                    </div>
+                    <div class="m-1">
+                        <label for="">Skill</label>
+                        <input type="text" class="form-control" name="skill" id="">
+                    </div>
+                    <div class="m-1">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" name="email" id="">
+                    </div>
+                    <div class="m-1">
+                        <label for="">Gender</label>
+                        <select name="gender" id="">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="m-1">
+                        <label for="">Photo</label>
+                       <input class="form-control" name="photo" type="file">
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit">Add new</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
