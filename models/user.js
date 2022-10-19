@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-const { stringify } = require('querystring');
 
-//==================================>
-// mongoose.Schema
+//==================================>  mongoose.Schema
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -20,6 +18,10 @@ const userSchema = mongoose.Schema(
       unique: true,
       trim: true,
     },
+    phone: {
+      type: String,
+      required: true,
+    },
     skill: {
       type: String,
       required: true,
@@ -30,6 +32,10 @@ const userSchema = mongoose.Schema(
       enum: ['Female', 'Male'],
     },
     photo: {
+      type: String,
+      required: true,
+    },
+    location: {
       type: String,
       required: true,
     },

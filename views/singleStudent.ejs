@@ -1,28 +1,39 @@
  <!------------------------------------------------- single data view  -->
  <div class="container">
     <div class="row flex justify-content-center my-5">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header bg-primary text-center text-white">
-                    <div>
-                        <a href="/" class="btn btn-warning w-100">Back</a> 
+        <div  class="col-md-5 border border-2 border-primary">
+            <div class="row">
+                <a class="btn btn-warning h4 text-white" href="/">Back</a>
+                    <div class="col-md-12 my-2">
+                       <div style="background-image: url('https://www.kibrispdr.org/data/898/walpaper-id-card-6.jpg');background-size: cover; " class="card border border-1 border-primary shadow">
+                        <div class="card-header bg-primary text-center ">
+                          
+                            <h5 class="text-white  py-2"><%= singdata.name %> </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex">
+                               
+                                <% if (singdata.photo == '6.jpg') { %>
+                                    <img class="card-img-top border border-warning border-2 shadow"  style="width: 100px;height: 100px;" src="/images/<%= singdata.photo %> " alt="">
+                                    <% } else { %>
+                                    <img class="card-img-top border border-warning border-2 shadow" style="width: 100px;height: 100px;"  src="/images/<%= singdata.photo %> " alt="">
+                                <% } %>
+                                <div class="px-2 w-100 ">
+                                
+                                    <h6>Age     : <%= singdata.age %> Y </h6>
+                                    <h6>Gender  : <%= singdata.gender %> </h6>
+                                    <h6>Phone   : <%= singdata.phone %> </h6>
+                                    <h6>Location: <%= singdata.location %> </h6>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center bg-primary text-white">
+                            <h6>Email : <%= singdata.email %> </h6>
+                        </div>
+                       </div>
                     </div>
-                    
-                </div>
-                <div class="card-body">
-                    <h1 class="text-center"><%= singdata.name %> </h1>
-                    <% if (singdata.photo == '6.jpg') { %>
-                        <img class="card-img" src="/images/<%= singdata.photo %>" alt="">
-                     <% } else { %>
-                        <img class="card-img" src="/images/<%= singdata.photo %>" alt="">
-                    <% } %>
-                    <hr>
-                    <p class="text-center h5">Age: <%= singdata.age %> </p>
-                    <p class="text-center h5">Email: <%= singdata.email %> </p>
-                    <p class="text-center h5">Skill: <%= singdata.skill %> </p>
-                    <p class="text-center h5">Gender: <%= singdata.gender %> </p>
-                </div>
-              </div>
+            </div>
         </div>
     </div>
  </div>

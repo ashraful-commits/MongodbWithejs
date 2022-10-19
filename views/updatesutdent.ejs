@@ -4,36 +4,48 @@
             <div class="card shadow">
                 <div class="card-header bg-primary text-center text-white">
                     <div>
-                        <a href="/" class="btn btn-warning w-100">Back</a>
+                        <a href="/" class="btn btn-light w-100">Back</a>
                     </div>
-                    <h1>Update Student</h1>
+                    <h1 class="h3">Update Student</h1>
                 </div>
                 <div class="card-body">
                     <form action="/update/<%= updatestu.id %> " method="post" enctype="multipart/form-data">
-                        <div class="m-1">
+                        <div class="my-1">
                             <label for="">Name</label>
                             <input type="text" class="form-control" value=" <%= updatestu.name %>" name="name" id="">
                         </div>
-                        <div class="m-1">
+                        <div class="my-1">
                             <label for="">Age</label>
                             <input type="text" class="form-control" name="age"  value=" <%= updatestu.age %>" id="">
                         </div>
-                        <div class="m-1">
+                        <div class="my-1">
                             <label for="">Skill</label>
                             <input type="text" class="form-control"  value=" <%= updatestu.skill %>" name="skill" id="">
                         </div>
-                        <div class="m-1">
+                        <div class="my-1">
                             <label for="">Email</label>
                             <input type="email" class="form-control"  value=" <%= updatestu.email %>" name="email" id="">
                         </div>
-                        <div class="m-1">
+                        <div class="my-1">
+                            <label for="">Phone</label>
+                            <input type="text" class="form-control"  value=" <%= updatestu.phone %>" name="phone" id="">
+                        </div>
+                        <div class="my-1">
                             <label for="">Gender</label>
                             <select name="gender"  value=" <%= updatestu.gender %>" id="">
-                                <option value="Male">Male</option>
+                                <option selected value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
-                        <div class="m-1">
+                        <div class="my-1">
+                            <label for="">Location</label>
+                            <select name="location" value="<%= updatestu.location %>" id="">
+                                <option selected value="Uttara">Uttara</option>
+                                <option value="Mirpur">Mirpur</option>
+                                <option value="Badda">Badda</option>
+                            </select>
+                        </div>
+                        <div class="my-1">
                             <label for="">Photo</label>
                            <input class="form-control" name="photo"  value="<%= updatestu.photo %>" type="file">
                         </div>

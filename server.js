@@ -27,7 +27,6 @@ app.use(router);
 //====================================> public folder static
 app.use(express.static('public'));
 //===================================> Mongodb model import
-mongoTest();
 //====================================> crate server
 
 app.listen(port, () => {

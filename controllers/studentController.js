@@ -14,14 +14,17 @@ const studentData = async (req, res) => {
 
 //==============================================> create data
 const createStudent = async (req, res) => {
-  const { name, age, email, skill, gender, photo } = req.body;
+  const { name, age, email, skill, gender, photo, phone, location } =
+    req.body;
 
   const postData = {
     name: name,
     age: age,
     email: email,
+    phone: phone,
     skill: skill,
     gender: gender,
+    location: location,
     photo: req.file.filename,
   };
 
@@ -57,12 +60,16 @@ const updateSutudent = async (req, res) => {
 //=====================================================>  update post mathod
 const updateNowSutudent = async (req, res) => {
   const id = req.params.id;
-  const { name, age, email, skill, gender, photo } = req.body;
+  const { name, age, email, skill, gender, photo, phone, location } =
+    req.body;
   const updateData = {
     name: name,
     age: age,
     email: email,
+    phone: phone,
     skill: skill,
+    location: location,
+    gender: gender,
     photo: req.file.filename,
   };
   await user.updateOne({ _id: id }, updateData);
